@@ -89,7 +89,7 @@ These types can be serialized by default:
 
 Define `[MemoryPackable]` `class` / `struct` / `record` / `record struct`
 ---
-`[MemoryPackable]` can annotate to any `class`, `struct`, `record`, `record struct` and `interface`. If a type is `struct` or `record struct` which contains no reference types ([C# Unmanaged types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/unmanaged-types)) any additional annotation (ignore, include, constructor, callbacks) is not used, that serialize/deserialize directly from the memory.
+`[MemoryPackable]` can annotate to any non-nested `class`, `struct`, `record`, `record struct` and `interface`. If a type is `struct` or `record struct` which contains no reference types ([C# Unmanaged types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/unmanaged-types)) any additional annotation (ignore, include, constructor, callbacks) is not used, that serialize/deserialize directly from the memory.
 
 Otherwise, by default, `[MemoryPackable]` serializes public instance properties or fields. You can use `[MemoryPackIgnore]` to remove serialization target, `[MemoryPackInclude]` promotes a private member to serialization target.
 
